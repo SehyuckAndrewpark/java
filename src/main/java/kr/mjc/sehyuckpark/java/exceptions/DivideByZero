@@ -1,0 +1,27 @@
+package kr.mjc.sehyuckpark.java.exceptions;
+
+import java.util.Scanner;
+
+public class DivideByZero {
+
+    public static void main(String[] args) {
+        try {
+            new DivideByZero().go();
+        } catch (ArithmeticException e) {
+            System.out.println("Error: A/B=C -> B=0.");
+        }
+    }
+
+    public void go() {
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("A/B=C, Type A : ");
+            int dividend = scanner.nextInt();
+            System.out.print("A/B=C, Type B : ");
+            int divisor = scanner.nextInt();
+
+            int share = dividend / divisor;
+            System.out.format("C= %d.\n", share);
+            System.out.println("Exit Program.");
+        }
+    }
+}
